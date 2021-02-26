@@ -2,6 +2,7 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import entities.Product;
 
@@ -19,8 +20,13 @@ public class Program {
 		
 		//list.forEach(new PriceUpdate()); //pasando uma instancia do PriceUpdate 
 		//list.forEach(Product::staticPriceUpdate); //referencia metod estatico na clase Product
-		list.forEach(Product::nonStaticPriceUpdate); //referencia metod nao estatico na clase Product
+		//list.forEach(Product::nonStaticPriceUpdate); //referencia metod nao estatico na clase Product
 
+		
+		//Expresao lambda declarada
+		double factor = 1.1;
+		Consumer<Product> consumer = p -> p.setPrice(p.getPrice()*factor);
+		list.forEach(consumer);
 		
 		list.forEach(System.out::println);
 
