@@ -18,7 +18,8 @@ public class Program {
 		list.add(new Product("HD Case", 80.90));
 		
 		//list.forEach(new PriceUpdate()); //pasando uma instancia do PriceUpdate 
-		list.forEach(Product::staticPriceUpdate); //referencia metod estatico na clase Product
+		//list.forEach(Product::staticPriceUpdate); //referencia metod estatico na clase Product
+		list.forEach(Product::nonStaticPriceUpdate); //referencia metod nao estatico na clase Product
 
 		
 		list.forEach(System.out::println);
